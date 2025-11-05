@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>USER REGISTRATION</title>
+    <title>User Registration</title>
+    <?php include 'bootstrap.php'; ?>
 </head>
 <body>
-    <h2>USER REGISTRATION</h2>
-    <form method="POST" action="register_process.php">
-        <input type="text" name="name" placeholder="names" required><br>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <button type="submit">Register</button>
-    </form>
+    <div class="container">
+        <h2>User Registration</h2>
+        <form method="POST" action="register_process.php">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
 </body>
 </html>
