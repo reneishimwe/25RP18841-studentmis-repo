@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  php-app:
+    image: php:8.2-apache
+    container_name: php_25rp18841_app
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: mysql:8.0
+    container_name: mysql_25rp18841_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: student_mis
+      MYSQL_USER: mis_user
+      MYSQL_PASSWORD: mispass123
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+
+volumes:
+  db_data:
